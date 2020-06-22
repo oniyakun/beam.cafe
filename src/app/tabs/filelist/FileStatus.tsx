@@ -38,7 +38,7 @@ export class FileStatus extends Component<Props> {
         return (
             <div className={styles.status}
                  data-state={status}
-                 aria-label={`File status: ${status}`}>
+                 aria-label={`文件状态: ${status}`}>
                 <span>{text}</span>
 
                 <svg xmlns="http://www.w3.org/2000/svg"

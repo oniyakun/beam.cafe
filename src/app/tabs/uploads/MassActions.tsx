@@ -46,41 +46,41 @@ export class MassActions extends Component {
             <div className={cn(styles.massActions, {
                 [styles.visible]: amount > 0
             })}>
-                <h3>{amount > 1 ? `${amount} Uploads Selected` : 'One Upload Selected'}</h3>
+                <h3>{amount > 1 ? `${amount} 个上传已被选中` : '一个上传文件'}</h3>
 
                 <div className={styles.controls}>
                     <button disabled={!massAction.has('resume')}
                             onClick={this.massAction('resume')}
                             className={styles.actionBtn}
-                            aria-label="Resume download for selected elements">
+                            aria-label="继续下载选中的文件">
                         Resume {getTextFor('resume')}
                     </button>
 
                     <button disabled={!massAction.has('pause')}
                             onClick={this.massAction('pause')}
                             className={styles.actionBtn}
-                            aria-label="Pause download for selected elements">
+                            aria-label="暂停下载选中的文件">
                         Pause {getTextFor('pause')}
                     </button>
 
                     <button disabled={!massAction.has('cancel')}
                             onClick={this.massAction('cancel')}
                             className={styles.actionBtn}
-                            aria-label="Cancel download for selected elements">
+                            aria-label="取消下载选中的文件">
                         Cancel {getTextFor('cancel')}
                     </button>
 
                     <button disabled={!massAction.has('remove')}
                             onClick={this.massAction('remove')}
                             className={styles.actionBtn}
-                            aria-label="Remove selected uploads">
+                            aria-label="移除选中的文件">
                         Remove {getTextFor('remove')}
                     </button>
 
                     <button onClick={this.clearSelection}
                             className={styles.clearSelectionBtn}
                             aria-label="Clear selection">
-                        <bc-tooltip content="Clear Selection" pos="top-middle"/>
+                        <bc-tooltip content="取消选中" pos="top-middle"/>
                         <bc-icon name="delete"/>
                     </button>
                 </div>

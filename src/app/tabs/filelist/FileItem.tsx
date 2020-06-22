@@ -38,14 +38,14 @@ export class FileItem extends Component<Props> {
         if (navigator.share && isMobile) {
             navigator.share({
                 title: name,
-                text: `Download ${name}`,
+                text: `下载 ${name}`,
                 url: link
             }).then(() => null).then(() => null);
         } else {
             copyToClipboard(link).then(() => {
-                toast.show('Link copied to clipboard!');
+                toast.show('链接已复制到剪贴板！');
             }).catch(() => toast.show({
-                text: 'Failed to copy link :(',
+                text: '复制失败 :(',
                 type: 'error'
             }));
         }
@@ -69,18 +69,18 @@ export class FileItem extends Component<Props> {
             if (relatedUploads > 0) {
                 DialogBox.instance.open({
                     icon: 'exclamation-mark',
-                    title: 'Uh Oh! Are you sure about that?',
+                    title: '等会！你真的要这么做吗？',
                     description: relatedUploads > 1 ?
-                        `There are currently ${relatedUploads} uploads of this file. Continue?` :
-                        'This file is currently being uploaded. Continue?',
+                        `这里有 ${relatedUploads} 个连接到这个文件，继续吗？` :
+                        '这个文件目前正在上传中，继续吗?',
                     buttons: [
                         {
                             type: 'success',
-                            text: 'Keep File'
+                            text: '算了'
                         },
                         {
                             type: 'error',
-                            text: 'Remove'
+                            text: '移除'
                         }
                     ]
                 }).then(value => {
@@ -136,36 +136,36 @@ export class FileItem extends Component<Props> {
                                  content={[{
                                      id: 'refresh',
                                      icon: 'sync',
-                                     text: 'Refresh Key',
+                                     text: '重置链接',
                                      onClick: this.refresh
                                  }, {
                                      id: 'share',
                                      icon: navigator.share && isMobile ? 'share' : 'copy',
-                                     text: navigator.share && isMobile ? 'Share' : 'Copy Link',
+                                     text: navigator.share && isMobile ? 'Share' : '复制链接',
                                      onClick: this.share
                                  }, {
                                      id: 'remove',
                                      icon: 'trash',
-                                     text: 'Remove',
+                                     text: '移除文件',
                                      onClick: this.remove
                                  }]}/>
                 ) : (
                     <div className={styles.actionsBox}>
                         <button className={styles.refreshBtn}
                                 onClick={this.refresh}>
-                            <bc-tooltip content="Refresh Access Key"/>
+                            <bc-tooltip content="刷新分享链接"/>
                             <bc-icon name="sync"/>
                         </button>
 
                         <button className={styles.shareBtn}
                                 onClick={this.share}>
-                            <bc-tooltip content="Copy Link to Clipboard"/>
+                            <bc-tooltip content="复制链接到剪贴板"/>
                             <bc-icon name="copy"/>
                         </button>
 
                         <button className={styles.removeBtn}
                                 onClick={this.remove}>
-                            <bc-tooltip content="Remove File"/>
+                            <bc-tooltip content="移除这个文件"/>
                             <bc-icon name="trash"/>
                         </button>
                     </div>
@@ -173,7 +173,7 @@ export class FileItem extends Component<Props> {
 
                 <p className={styles.copyLinkOverlay}
                    onClick={this.share}>
-                    <span>Copy Link</span>
+                    <span>复制链接</span>
                 </p>
             </div>
         );

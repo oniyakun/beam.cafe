@@ -41,14 +41,14 @@ export class Uploads extends Component {
                         <Fragment>
                             <div className={styles.itemList}
                                  role="list"
-                                 aria-label="List of all uploads">
+                                 aria-label="列出所有上传">
                                 {items}
                             </div>
                             <MassActions/>
                         </Fragment> :
                         <div className={styles.placeholder}>
                             <bc-icon name="link"/>
-                            <h1>Share A File To Get Started!</h1>
+                            <h1>分享一个文件吧</h1>
                         </div>
                 }
             </div>

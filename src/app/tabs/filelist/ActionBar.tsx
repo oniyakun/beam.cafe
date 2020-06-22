@@ -16,8 +16,8 @@ export const ActionBar: FunctionalComponent = observer(() => {
         if (relatedUploads) {
             DialogBox.instance.open({
                 icon: 'exclamation-mark',
-                title: 'Uh Oh! Are you sure about that?',
-                description: 'This actions will cause all related streams and uploads to get cancelled, are you sure?',
+                title: '等会！你真的要这么做吗？',
+                description: '这会导致你上传的所有文件和正在传输的文件被取消，确定吗？',
                 buttons: [
                     {
                         type: 'success',
@@ -36,11 +36,11 @@ export const ActionBar: FunctionalComponent = observer(() => {
 
     const removeSelectedFiles = () => preConfirmAction(() => {
         files.remove(...files.selectedItems);
-    }, 'Remove');
+    }, '移除');
 
     const refreshSelectedFiles = () => preConfirmAction(() => {
         files.requestRefreshment(...files.selectedItems);
-    }, 'Refresh');
+    }, '刷新');
 
     const {selectedItems, selectedAmount} = files;
     const loading = !!selectedItems.find(value => value.status !== 'ready');
@@ -51,7 +51,7 @@ export const ActionBar: FunctionalComponent = observer(() => {
                     className={styles.addBtn}
                     aria-label="Add files manually">
                 <bc-icon name="plus"/>
-                <span>Add Files</span>
+                <span>添加文件</span>
             </button>
 
             {selectedAmount ?
@@ -60,7 +60,7 @@ export const ActionBar: FunctionalComponent = observer(() => {
                         aria-label="Refresh Access Key"
                         disabled={loading}>
                     <bc-icon name="reset"/>
-                    <span>Refresh {selectedAmount > 1 ? `${selectedAmount} keys` : 'Key'}</span>
+                    <span>刷新 {selectedAmount > 1 ? `${selectedAmount} keys` : 'Key'}</span>
                 </button> : ''
             }
 
@@ -70,7 +70,7 @@ export const ActionBar: FunctionalComponent = observer(() => {
                             aria-label="Remove files"
                             disabled={loading}>
                         <bc-icon name="trash"/>
-                        <span>Remove {selectedAmount > 1 ? `${selectedAmount} files` : 'File'}</span>
+                        <span>移除 {selectedAmount > 1 ? `${selectedAmount} files` : 'File'}</span>
                     </button>
 
                     <button onClick={() => files.clearSelection()}

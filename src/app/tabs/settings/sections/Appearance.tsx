@@ -80,8 +80,8 @@ export const Appearance: FunctionalComponent = observer(() => {
         <div className={baseStyles.section}>
             <header>
                 <bc-icon name="palette"/>
-                <h1>Appearance</h1>
-                <span>Make it your own!</span>
+                <h1>外观</h1>
+                <span>选择你喜欢的颜色</span>
 
                 <div className={styles.colors}>
                     {customColorButtons}
@@ -91,27 +91,27 @@ export const Appearance: FunctionalComponent = observer(() => {
             <section>
                 <header>
                     <bc-icon name="contrast"/>
-                    <h3>High Contrast</h3>
+                    <h3>高对比度</h3>
                     <Switch state={settings.highContrast}
                             onChange={toggleHighContrast}/>
                 </header>
 
                 <article>
-                    Increases the contrast of all UI-Elements.
+                    增加UI元件之间的对比度
                 </article>
             </section>
 
             <section>
                 <header>
                     <bc-icon name="services"/>
-                    <h3>Process duplicate filename</h3>
+                    <h3>自动处理重复的文件名</h3>
                     <Switch state={settings.processDuplicateFilenames}
                             onChange={v => settings.processDuplicateFilenames = v}/>
                 </header>
 
                 <article>
-                    In case you add a file of which the name is already used, a suffix will be added.
-                    If you turn this option off these files will be skipped.
+                    如果你添加的文件名重复出现，则将自动添加一个后缀。
+                    如果你关闭此选项，将跳过这些文件。
                 </article>
             </section>
         </div>

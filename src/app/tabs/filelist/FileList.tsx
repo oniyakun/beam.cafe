@@ -150,32 +150,32 @@ export class FileList extends Component<{}, State> {
 
                     <p className={styles.alignCenter}>
                         <span onClick={this.sortBy('index')}>
-                            <bc-tooltip content="Sort by Index"/>#
+                            <bc-tooltip content="按序号"/>#
                         </span>
                     </p>
 
                     <p>
                         <span onClick={this.sortBy('name')}>
-                            <bc-tooltip content="Sort by Filename"/>Filename
+                            <bc-tooltip content="按文件名"/>文件名
                         </span>
                     </p>
 
                     <p className={styles.alignRight}>
                         <span onClick={this.sortBy('size')}>
-                            <bc-tooltip content="Sort by File Size"/>File Size
+                            <bc-tooltip content="按文件大小"/>文件大小
                         </span>
                     </p>
 
                     {isMobile ? (
                         <p className={styles.alignCenter}/>
                     ) : (
-                        <p className={styles.alignCenter}>Actions</p>
+                        <p className={styles.alignCenter}>操作</p>
                     )}
                 </div>
 
                 <div className={styles.list}
                      role="list"
-                     aria-label="List of added files">
+                     aria-label="显示所有文件">
                     {this.sortedElements.map(item =>
                         <FileItem key={item.index}
                                   item={item}

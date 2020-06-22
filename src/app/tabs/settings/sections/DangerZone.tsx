@@ -43,32 +43,31 @@ export class DangerZone extends Component {
             <div className={cn(baseStyles.section)}>
                 <header>
                     <bc-icon name="electricity"/>
-                    <h1>Danger Zone</h1>
-                    <span>Usage of the following options with caution!</span>
+                    <h1>危险区域！</h1>
+                    <span>请不要更改以下选项，除非你知道自己在做什么</span>
                 </header>
 
                 <section>
                     <header>
                         <bc-icon name="refresh-shield"/>
-                        <h3>Refresh Keys</h3>
+                        <h3>重置分享链接</h3>
                         <button onClick={this.resetKeys}
                                 className={cn(baseStyles.headerBtn, baseStyles.danger)}
                                 disabled={files.isEmpty}
-                                aria-describedby={label1}>Refresh
+                                aria-describedby={label1}>重置
                         </button>
                     </header>
 
                     <article id={label1}>
-                        In case you discover anomalies such as suspicious downloads you can
-                        generate new keys for all your files. All active downloads will be cancelled
-                        and your previous download-links will be invalidated.
+                        如果发现异常情况例如可疑下载，你可以为所有文件生成新的分享链接。
+                        所有正在进行的下载将被中断，您以前的分享链接将失效。
                     </article>
                 </section>
 
                 <section>
                     <header>
                         <bc-icon name="settings"/>
-                        <h3>Reset Settings</h3>
+                        <h3>重置设定值</h3>
                         <button className={cn(baseStyles.headerBtn, baseStyles.danger)}
                                 onClick={this.resetSettings}
                                 aria-describedby={label2}>Reset
@@ -76,7 +75,7 @@ export class DangerZone extends Component {
                     </header>
 
                     <article id={label2}>
-                        This will restore the default-settings, overriding the current ones.
+                        这会把你的所有设定恢复到默认值
                     </article>
                 </section>
             </div>

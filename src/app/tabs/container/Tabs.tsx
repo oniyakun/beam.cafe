@@ -31,9 +31,9 @@ export const Tabs: FunctionalComponent = observer(() => {
     };
 
     const titles = [
-        listedFiles.length && !isMobile ? `Files (${listedFiles.length})` : 'Files',
-        listedUploads.length && !isMobile ? `Uploads (${listedUploads.length})` : 'Uploads',
-        'Settings'
+        listedFiles.length && !isMobile ? `Files (${listedFiles.length})` : '文件',
+        listedUploads.length && !isMobile ? `Uploads (${listedUploads.length})` : '上传',
+        '设置'
     ];
 
     return (

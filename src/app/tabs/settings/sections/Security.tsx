@@ -12,72 +12,63 @@ export const Security: FunctionalComponent = observer(() => {
         <div className={baseStyles.section}>
             <header>
                 <bc-icon name="shield"/>
-                <h1>Security</h1>
-                <span>Everything around privacy and more</span>
+                <h1>安全设置</h1>
+                <span>所有隐私设置都在这里</span>
             </header>
 
             <section>
                 <header>
                     <bc-icon name="resume"/>
-                    <h3>Auto Pause</h3>
+                    <h3>自动暂停</h3>
                     <Switch state={settings.autoPause}
                             onChange={v => settings.autoPause = v}
                             aria-describedby={label1}/>
                 </header>
 
                 <article id={label1}>
-                    Every download / incoming request will be paused first until
-                    you explicitly &quot;confirm&quot; the file to get downloaded.
-                    This increases security by preventing others downloading your
-                    file while you&apos;re AFK or without knowing.
+                    所有下载请求都将经过你的同意后才会开始。
                 </article>
             </section>
 
             <section>
                 <header>
                     <bc-icon name="ninja"/>
-                    <h3>Strict Session</h3>
+                    <h3>严格会话</h3>
                     <Switch state={settings.remote.strictSession}
                             onChange={v => settings.remote.strictSession = v}
                             aria-describedby={label2}/>
                 </header>
 
                 <article id={label2}>
-                    Normally all keys and information about your files will be kept
-                    at least 15 minutes after disconnecting to re-establish ongoing uploads.
-                    Activate this if your ethernet-connection is stable and you want your session
-                    destroyed if you close this application.
+                    通常情况下，所有的密钥和有关您的文件的信息将保留至少15分钟后才会断开连接以稳定的上传。如果你的以太网连接是稳定的并想关闭此页面后立即停止上传，请打开这个选项
                 </article>
             </section>
 
             <section>
                 <header>
                     <bc-icon name="recycle"/>
-                    <h3>Reusable download-links</h3>
+                    <h3>可重复使用的分享链接</h3>
                     <Switch state={settings.remote.reusableDownloadKeys}
                             onChange={v => settings.remote.reusableDownloadKeys = v}
                             aria-describedby={label3}/>
                 </header>
 
                 <article id={label3}>
-                    Turn this option off to make all download links single-use.
-                    After a download-link has been used the file will refresh and a you&apos;ll
-                    receive a new download link.
+                    关闭这个选项会让所有分享链接变成一次性链接。当链接被使用后，将自动生成新的分享链接。
                 </article>
             </section>
 
             <section>
                 <header>
                     <bc-icon name="online"/>
-                    <h3>Streaming</h3>
+                    <h3>流式传输</h3>
                     <Switch state={settings.remote.allowStreaming}
                             onChange={v => settings.remote.allowStreaming = v}
                             aria-describedby={label3}/>
                 </header>
 
                 <article id={label3}>
-                    Streaming allows your peers to request partial content of a file (e.g. streaming a video / audio file.)
-                    Disable this to force your peer to download the whole file.
+                    流式传输允许对方通过对等网络在线串流你的视频/音频等内容，关闭这个选项会让对方只能先下载后观看。
                 </article>
             </section>
         </div>

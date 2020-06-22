@@ -32,11 +32,11 @@ export const SearchBar: FunctionalComponent<Props> = ({onUpdate, value}) => {
             <input type="text"
                    role="search"
                    aria-label="Search files"
-                   placeholder="Search files..."
+                   placeholder="搜索文件..."
                    ref={ref}
                    onChange={e => onUpdate((e.target as HTMLInputElement).value)} value={value || ''}/>
             <button onClick={onUpdate.bind(null, null)}
-                    aria-label="Clear search field">
+                    aria-label="清空">
                 <bc-icon name="delete"/>
             </button>
         </div>

@@ -20,22 +20,22 @@ type Tabs = Array<{
 
 const tabs: Tabs = [
     {
-        name: 'Appearance',
+        name: '外观',
         icon: 'palette',
         com: <Appearance/>
     },
     {
-        name: 'Security',
+        name: '安全',
         icon: 'shield',
         com: <Security/>
     },
     {
-        name: 'About',
+        name: '关于',
         icon: 'help',
         com: <About/>
     },
     {
-        name: 'Danger Zone',
+        name: '危险区域',
         icon: 'electricity',
         com: <DangerZone/>,
         separator: true,
@@ -46,7 +46,7 @@ const tabs: Tabs = [
 // Push notifications settings if available
 if (window.Notification) {
     tabs.splice(1, 0, {
-        name: 'Notifications',
+        name: '通知',
         icon: 'alarm',
         com: <Notifications/>
     });

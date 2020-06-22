@@ -58,9 +58,9 @@ export class UploadStateNotification extends Component {
                         <DropDown items={[
                             [key, name],
                             ...availableSettings
-                        ]} onSelect={this.replaceState(i)} aria-label={`Change upload state notification from when a upload ${name}`}/>
+                        ]} onSelect={this.replaceState(i)} aria-label={`当上传 ${name} 时更新上传状态通知`}/>
                         <button onClick={this.unwatchState(key)}
-                                aria-label={`Remove notification when a upload ${name}`}>
+                                aria-label={`当上传 ${name} 时移除通知`}>
                             <bc-icon name="delete"/>
                         </button>
                     </div>
@@ -71,7 +71,7 @@ export class UploadStateNotification extends Component {
         if (availableSettings.length) {
             buttons.push(
                 <DropDown items={[
-                    ['add', 'Add another notification...'],
+                    ['add', '添加另一个通知...'],
                     ...availableSettings
                 ]} onSelect={this.watchState}/>
             );

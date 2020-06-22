@@ -89,15 +89,15 @@ export class DropZone extends Component<Props, State> {
                 <div className={styles.desktop}>
                     <h1>{
                         files.isEmpty && !dragover ?
-                            'Drop Files To Get Started!' :
-                            'Release Files To Upload Them!'
+                            '拖动一些文件到这里' :
+                            '体验光速上传'
                     }</h1>
 
                     {files.isEmpty ?
                         <button onClick={this.chooseFiles}
                                 aria-label="Add files">
                             <bc-icon name="file"/>
-                            <span>Choose Files</span>
+                            <span>选择文件</span>
                         </button> :
                         <bc-icon name="arrow-down"/>
                     }
@@ -105,7 +105,7 @@ export class DropZone extends Component<Props, State> {
 
                 <div className={styles.mobile}>
                     <bc-icon name="rocket"/>
-                    <h1>Click <b>Add Files</b> To Get Started</h1>
+                    <h1>点击 <b>添加文件</b> 来光速上传</h1>
                 </div>
             </div>
         );
